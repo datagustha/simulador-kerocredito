@@ -19,12 +19,40 @@
   }
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
 body {
-  background-color: #f9fafb;
+  background: linear-gradient(
+    to bottom,
+    #7e3e9a 0%,
+    #7e3e9a 30%,
+    white 30%,
+    white 100%
+  );
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   overflow-x: hidden;
   margin: 0;
   padding: 20px;
+  min-height: 100vh;
 }
 
 /* Contêiner principal com borda */
