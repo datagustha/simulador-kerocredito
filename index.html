@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulador de Mensalidade Kero Crédito</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="main-container">
+      <!-- Tela de Login -->
+      <div id="login-screen" class="senha-container">
+        <label for="senha_input">🔒 Acesso Restrito</label>
+        <input type="password" id="senha_input" placeholder="Senha" />
+        <button id="login-btn" class="primary-btn">Acessar</button>
+        <p id="login-error" class="error-message"></p>
+      </div>
+
+      <!-- Conteúdo do Simulador (inicialmente oculto) -->
+      <div id="simulador-content" style="display: none">
+        <div class="logo-container">
+          <img
+            src="https://i.ibb.co/9kjcX1Kh/sim-cred-5.png"
+            width="200"
+            alt="Logo Simulador"
+          />
+        </div>
+
+        <div class="header-box">
+          <h1>Simulador de Mensalidade Kero Crédito</h1>
+          <p>Insira os dados para simular a nova mensalidade</p>
+        </div>
+
+        <div class="input-grid">
+          <div class="input-group">
+            <label for="qtd_lojas">Quantidade de lojas</label>
+            <input type="number" id="qtd_lojas" min="1" max="10" value="1" />
+          </div>
+          <div class="input-group">
+            <label for="producao_por_loja">Produção por loja (R$)</label>
+            <input type="text" id="producao_por_loja" placeholder="0,00" />
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="comissao">Comissão (%) (máximo 1%)</label>
+          <input type="text" id="comissao" value="0,00" />
+        </div>
+
+        <button id="calcular-btn" class="primary-btn">
+          Calcular Simulação
+        </button>
+
+        <!-- Resultados -->
+        <div id="result-container" class="highlight-box" style="display: none">
+          <div class="label">Nova Mensalidade 💸</div>
+          <div class="value" id="nova_mensalidade">R$ 0,00</div>
+          <div class="percent-reduction" id="comissao_aplicada">
+            Comissão aplicada: 0%
+          </div>
+        </div>
+
+        <h3 class="section-title">Detalhes da Simulação</h3>
+
+        <div id="details-container" class="card-wrapper" style="display: none">
+          <div class="card-grid">
+            <div class="card">
+              <i class="fas fa-money-bill-wave card-icon"></i>
+              <div class="card-title">Produção Total</div>
+              <div class="card-value" id="producao_total">R$ 0,00</div>
+            </div>
+            <div class="card">
+              <i class="fas fa-wallet card-icon"></i>
+              <div class="card-title">Valor Mensalidade</div>
+              <div class="card-value" id="valor_mensalidade">R$ 0,00</div>
+            </div>
+            <div class="card">
+              <i class="fas fa-tag card-icon"></i>
+              <div class="card-title">Desconto da Mensalidade</div>
+              <div class="card-value" id="desconto_mensalidade">R$ 0,00</div>
+            </div>
+            <div class="card">
+              <i class="fas fa-percent card-icon"></i>
+              <div class="card-title">Comissão (%)</div>
+              <div class="card-value" id="comissao_percentual">0%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
